@@ -24,6 +24,26 @@ class Aplicacion():
         # ('mi_app')  de la clase 'Aplicacion'. Su uso es 
         # imprescindible para que se pueda acceder a sus
         # valores desde otros métodos:
+        self.one = Tk()
+        self.one.geometry('600x400')
+        self.one.configure(background = 'pink')
+        style1 = ttk.Style()
+        style1.configure('W.TButton', font =('calibri', 15, 'bold'),foreground = 'red')
+        
+        
+        # Impide que los bordes puedan desplazarse para
+        # ampliar o reducir el tamaño de la ventana 'self.raiz':
+        self.one.resizable(width=False,height=False)
+        self.one.title("PRINCESA")
+
+        self.historia=Label(self.one, text="La historia cuenta que....", font=("Bradley Hand ITC", 30, 'bold'),fg='blue', bg = 'pink')
+        self.historia.pack(side=TOP)
+        #self.binfo.focus_set()
+        self.next=Button(self.one,text="next",command=self.WindowMain)
+        self.next.pack()
+        self.one.mainloop()
+
+    def WindowMain(self):
         self.raiz = Tk()
         self.raiz.geometry('600x400')
         self.raiz.configure(background = 'pink')
@@ -37,6 +57,9 @@ class Aplicacion():
         # ampliar o reducir el tamaño de la ventana 'self.raiz':
         self.raiz.resizable(width=False,height=False)
         self.raiz.title("PERSEVERANCE")
+
+
+
         self.ques=Label(self.raiz, text="¿Quieres ser mi Novia?", font=("Bradley Hand ITC", 30, 'bold'),fg='blue', bg = 'pink')
         self.ques.pack(side=TOP)
         self.xa = IntVar(value=1)#VALOR DE VARIBLE AUXILIAR PARA EL BOTON
@@ -81,19 +104,13 @@ class Aplicacion():
         # objeto anterior.
         self.bsalir.pack(side=RIGHT)
         self.bsalir.bind("<Enter>",self.enter)
-        
-        #self.bsalir.bind("<Enter>",self.delete)
-      
-        #self.bsalir.place(x=self.posx.get(),y=self.posx.get())
-        
-        # El foco de la aplicación se sitúa en el botón
-        # 'self.binfo' resaltando su borde. Si se presiona
-        # la barra espaciadora el botón que tiene el foco
-        # será pulsado. El foco puede cambiar de un widget
-        # a otro con la tecla tabulador [tab]
-        #self.binfo.focus_set()
         self.raiz.mainloop()
-         
+
+    def salir(self):
+        self.raiz.destroy()
+        self.one.destroy()
+
+      
     def createNewWindow(self):
         top = Toplevel() 
         top.geometry("550x130") 
@@ -102,11 +119,12 @@ class Aplicacion():
         #ttk().self.l2.config(font =('Arial', 11, 'bold'),foreground = 'black', background = 'pink')
         
         l2.pack()
-        bsalir2 = ttk.Button(top, text='SALIR', command=self.raiz.destroy)
+        bsalir2 = ttk.Button(top, text='SALIR', command=self.salir)
                                   #command=self.raiz.destroy)
         bsalir2.pack(side=BOTTOM)
         top.mainloop() 
-       
+    
+    
 
     def nada(self):
         print("nada")
