@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 from tkinter import *
 from tkinter import ttk
+import tkinter.font as tkFont
 import random
 xa1=0
 ya1=0
@@ -25,7 +26,7 @@ class Aplicacion():
         # imprescindible para que se pueda acceder a sus
         # valores desde otros métodos:
         self.one = Tk()
-        self.one.geometry('600x400')
+        self.one.geometry('700x500')
         self.one.configure(background = 'pink')
         style1 = ttk.Style()
         style1.configure('W.TButton', font =('calibri', 15, 'bold'),foreground = 'red')
@@ -36,8 +37,15 @@ class Aplicacion():
         self.one.resizable(width=False,height=False)
         self.one.title("PRINCESA")
 
-        self.historia=Label(self.one, text="La historia cuenta que....", font=("Bradley Hand ITC", 30, 'bold'),fg='blue', bg = 'pink')
+
+
+        fontTextHis = tkFont.Font(family="Comic Sans MS", size=14, weight="bold",slant="italic")
+        parraFo1="La historia cuenta que.... \n Una vez dos personas se se vieron \n sin imaginarse que algún día \n llegarian a estar juntos."
+        self.historia=Label(self.one, text=parraFo1,fg='black', bg = 'pink')
+        self.historia.configure(font=fontTextHis)
         self.historia.pack(side=TOP)
+
+        
         #self.binfo.focus_set()
         self.next=Button(self.one,text="next",command=self.WindowMain)
         self.next.pack()
@@ -113,7 +121,7 @@ class Aplicacion():
       
     def createNewWindow(self):
         top = Toplevel() 
-        top.geometry("550x130") 
+        top.geometry("650x230") 
         top.title("¡SI!") 
         l2 = Label(top, text = "Sabia que dirias que si mi princesa ( <3 ) TE QUIERO ∞", font =('Brush Script MT', 20, 'bold'))
         #ttk().self.l2.config(font =('Arial', 11, 'bold'),foreground = 'black', background = 'pink')
