@@ -40,7 +40,7 @@ class Aplicacion():
 
 
         fontTextHis = tkFont.Font(family="Comic Sans MS", size=14, weight="bold",slant="italic")
-        parraFo1="La historia cuenta que.... \n Una vez dos personas se se vieron \n sin imaginarse que algún día \n llegarian a estar juntos."
+        parraFo1="La historia cuenta que.... \n Una vez dos personas se se vieron \n sin imaginarse que algún día \n llegarian a estar juntos......"
         self.historia=Label(self.one, text=parraFo1,fg='black', bg = 'pink')
         self.historia.configure(font=fontTextHis)
         self.historia.pack(side=TOP)
