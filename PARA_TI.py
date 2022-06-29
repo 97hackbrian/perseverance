@@ -84,12 +84,17 @@ class Aplicacion():
             self.historia.configure(font=fontTextHis)
             self.historia.pack(side=TOP)
         if c==4:
-            self.next=Button(self.one,text="next",command=self.WindowMain)
+            self.next=Button(self.one,text="next",command=self.Window2)
             self.next.place(x=350,y=400)
         
 
         
-        
+    def Window2(self):
+        self.wind2=Tk()
+        self.wind2.geometry('700x500')
+        self.wind2.configure(background='pink')
+        self.next=Button(self.wind2,text="next",command=self.WindowMain)
+        self.next.place(x=350,y=400)
 
     def WindowMain(self):
         self.raiz = Tk()
@@ -156,6 +161,7 @@ class Aplicacion():
 
     def salir(self):
         self.raiz.destroy()
+        self.wind2.destroy()
         self.one.destroy()
 
       
