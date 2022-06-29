@@ -5,11 +5,14 @@ from tkinter import *
 from tkinter import ttk
 import tkinter.font as tkFont
 import random
+from zlib import Z_FIXED
 xa1=0
 ya1=0
+c=0
 
 xa2=0
 ya2=0
+
 #x1=int(random.randint(0,500))
 #y1=int(random.randint(0,600))
 # La clase 'Aplicacion' ha crecido. En el ejemplo se incluyen
@@ -18,9 +21,15 @@ ya2=0
 # al método 'verinfo' para mostrar información en el otro 
 # widget, una caja de texto: un evento ejecuta una acción: 
 class Aplicacion():
+    
+    
+    
+    
+    
+    
     def __init__(self):
 
-        
+    
         # En el ejemplo se utiliza el prefijo 'self' para
         # declarar algunas variables asociadas al objeto 
         # ('mi_app')  de la clase 'Aplicacion'. Su uso es 
@@ -33,24 +42,54 @@ class Aplicacion():
         style1.configure('W.TButton', font =('calibri', 15, 'bold'),foreground = 'red')
         
         
+       
+
+
         # Impide que los bordes puedan desplazarse para
         # ampliar o reducir el tamaño de la ventana 'self.raiz':
         self.one.resizable(width=False,height=False)
         self.one.title("PRINCESA")
-
-
-
+        #fontTextHis = tkFont.Font(family="Comic Sans MS", size=14, weight="bold",slant="italic")
+        #parraFo="La historia cuenta que.... \n Una vez dos personas se se vieron sin imaginarse que algún día \n llegarian a estar juntos......"
+        #self.historia=Label(self.one, text=parraFo,fg='black', bg = 'pink')
+        #self.historia.configure(font=fontTextHis)
+        #self.historia.pack(side=TOP)
+        self.next=Button(self.one,text="next",command=self.loqueSeaXD)
+        self.next.place(x=350,y=400)
+        #self.binfo.focus_set()
+        
+        self.one.mainloop()
+        
+    
+        
+    def loqueSeaXD(self):
+        global c
+        global parraFo
+        c=c+1
         fontTextHis = tkFont.Font(family="Comic Sans MS", size=14, weight="bold",slant="italic")
-        parraFo1="La historia cuenta que.... \n Una vez dos personas se se vieron \n sin imaginarse que algún día \n llegarian a estar juntos......"
-        self.historia=Label(self.one, text=parraFo1,fg='black', bg = 'pink')
-        self.historia.configure(font=fontTextHis)
-        self.historia.pack(side=TOP)
+        if c==1:
+            parraFo="1a"
+            
+        if c==2:
+            parraFo="2b"
+            
+        if c==3:
+            parraFo="3c"
+            
+        if c==4:
+            parraFo="4d"
+        
+        if(c<=4):
+            self.historia=Label(self.one, text=parraFo,fg='black', bg = 'pink')
+            self.historia.configure(font=fontTextHis)
+            self.historia.pack(side=TOP)
+        if c==4:
+            self.next=Button(self.one,text="next",command=self.WindowMain)
+            self.next.place(x=350,y=400)
+        
 
         
-        #self.binfo.focus_set()
-        self.next=Button(self.one,text="next",command=self.WindowMain)
-        self.next.pack()
-        self.one.mainloop()
+        
 
     def WindowMain(self):
         self.raiz = Tk()
@@ -124,7 +163,7 @@ class Aplicacion():
         top = Toplevel() 
         top.geometry("650x230") 
         top.title("¡SI!") 
-        l2 = Label(top, text = "Sabia que dirias que si mi princesa ( <3 ) TE QUIERO ∞", font =('Brush Script MT', 20, 'bold'))
+        l2 = Label(top, text = "Sabia que dirias que si mi princesa ( <3 ) TE QUIERO ∞", font =('Brush Script MT', 17, 'bold'))
         #ttk().self.l2.config(font =('Arial', 11, 'bold'),foreground = 'black', background = 'pink')
         
         l2.pack()
@@ -212,6 +251,8 @@ class Aplicacion():
 
 def main():
     mi_app = Aplicacion()
+    
+    
     return 0
 
 if __name__ == '__main__':
