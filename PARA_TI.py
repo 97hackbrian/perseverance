@@ -41,10 +41,6 @@ class Aplicacion():
         style1 = ttk.Style()
         style1.configure('W.TButton', font =('calibri', 15, 'bold'),foreground = 'red')
         
-        
-       
-
-
         # Impide que los bordes puedan desplazarse para
         # ampliar o reducir el tamaño de la ventana 'self.raiz':
         self.one.resizable(width=False,height=False)
@@ -93,6 +89,14 @@ class Aplicacion():
         self.wind2=Tk()
         self.wind2.geometry('700x500')
         self.wind2.configure(background='pink')
+        fontTextHis = tkFont.Font(family="Comic Sans MS", size=14, weight="bold",slant="italic")
+        
+        parraFo="hola"
+        self.historia=Label(self.wind2, text=parraFo,fg='black', bg = 'pink')
+        self.historia.configure(font=fontTextHis)
+        self.historia.pack(side=TOP)
+        
+        
         self.next=Button(self.wind2,text="next",command=self.WindowMain)
         self.next.place(x=350,y=400)
 
