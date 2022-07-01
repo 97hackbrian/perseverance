@@ -55,6 +55,7 @@ class Aplicacion():
         #self.binfo.focus_set()
         
         self.one.mainloop()
+        self.wind2.mainloop()
         
     
         
@@ -83,6 +84,7 @@ class Aplicacion():
             self.next=Button(self.one,text="next",command=self.Window2)
             self.next.place(x=350,y=400)
         
+        
 
         
     def Window2(self):
@@ -92,13 +94,14 @@ class Aplicacion():
         fontTextHis = tkFont.Font(family="Comic Sans MS", size=14, weight="bold",slant="italic")
         
         parraFo="hola"
-        self.historia=Label(self.wind2, text=parraFo,fg='black', bg = 'pink')
-        self.historia.configure(font=fontTextHis)
-        self.historia.pack(side=TOP)
+        self.historia2=Label(self.wind2, text=parraFo,fg='black', bg = 'pink')
+        self.historia2.configure(font=fontTextHis)
+        self.historia2.pack(side=TOP)
         
         
-        self.next=Button(self.wind2,text="next",command=self.WindowMain)
+        self.next=Button(self.wind2,text="next2",command=self.WindowMain)
         self.next.place(x=350,y=400)
+        self.wind2.mainloop()
 
     def WindowMain(self):
         self.raiz = Tk()
