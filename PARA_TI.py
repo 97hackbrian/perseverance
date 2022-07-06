@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-##########################MAIN###################################
+########################## MAIN ###################################
 from tkinter import *
 from tkinter import ttk
 import tkinter.font as tkFont
@@ -93,7 +93,7 @@ class Aplicacion():
         self.wind2.configure(background='pink')
         fontTextHis = tkFont.Font(family="Comic Sans MS", size=14, weight="bold",slant="italic")
         
-        parraFo="hola"
+        parraFo="hola 2"
         self.historia2=Label(self.wind2, text=parraFo,fg='black', bg = 'pink')
         self.historia2.configure(font=fontTextHis)
         self.historia2.pack(side=TOP)
