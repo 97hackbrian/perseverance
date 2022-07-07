@@ -4,6 +4,7 @@
 #Cuando una personsa quiere mucho a otra
 #Su corazón se encarga de hacerle saber que
 #Es ahí
+
 ########################## MAIN ###################################
 from tkinter import *
 from tkinter import ttk
@@ -13,7 +14,6 @@ from zlib import Z_FIXED
 xa1=0
 ya1=0
 c=0
-
 xa2=0
 ya2=0
 class Aplicacion():
@@ -27,7 +27,7 @@ class Aplicacion():
         self.one.resizable(width=False,height=False)
         self.one.title("PRINCESA")
 
-        self.next=Button(self.one,text="next",command=self.loqueSeaXD)
+        self.next=Button(self.one,text="next11",command=self.loqueSeaXD)
         self.next.place(x=350,y=400)
 
         self.one.mainloop()
@@ -128,8 +128,8 @@ class Aplicacion():
             x2=int(random.randrange(0,500,11))
             y2=int(random.randrange(0,310,7))
             if(abs(x2-xa2)<=50 and abs(y2-ya2)<=50):
-                x2=int(random.randrange(0,500,2))#7#
-                y2=int(random.randrange(0,310,1))#5#
+                x2=int(random.randrange(0,500,2))
+                y2=int(random.randrange(0,310,1))
                 print("se hace uso")
             xa2=x2
             ya2=y2
@@ -140,8 +140,8 @@ class Aplicacion():
             x1=int(random.randrange(0,500,99))
             y1=int(random.randrange(0,380,77))
             while(abs(x1-xa1)<=70 or abs(y1-ya1)<=70):
-                x1=int(random.randrange(0,500,3))#7#
-                y1=int(random.randrange(0,380,2))#5#
+                x1=int(random.randrange(0,500,3))
+                y1=int(random.randrange(0,380,2))
                 print("se hace uso")
             print("X1 -> ",x1)
             print("Y1 -> ",y1)
