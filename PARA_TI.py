@@ -74,6 +74,7 @@ class Aplicacion():
         self.raiz = Tk()
         self.raiz.geometry('600x400')
         self.raiz.configure(background = 'pink')
+        self.raiz.config(cursor = "heart")
         style1 = ttk.Style()
         style2 = ttk.Style()
         style3 = ttk.Style()
