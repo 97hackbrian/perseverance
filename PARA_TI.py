@@ -11,6 +11,8 @@ from tkinter import ttk
 import tkinter.font as tkFont
 import random
 from zlib import Z_FIXED
+
+from matplotlib import style
 xa1=0
 ya1=0
 c=0
@@ -27,8 +29,11 @@ class Aplicacion():
         self.one.resizable(width=False,height=False)
         self.one.title("PRINCESA")
 
-        self.next=Button(self.one,text="next11",command=self.loqueSeaXD)
-        self.next.place(x=350,y=400)
+        
+        
+        self.next=Button(self.one,text="NEXT",command=self.loqueSeaXD,height = 1,width = 7)
+        self.next.place(x=530,y=390)
+        self.next.configure(font=tkFont.Font(family="Segoe Script",slant="italic",weight="bold",size=20),bg="#5e00a3",fg="White",borderwidth = 5)
 
         self.one.mainloop()
         self.wind2.mainloop()
@@ -55,24 +60,30 @@ class Aplicacion():
             self.historia.configure(font=fontTextHis)
             self.historia.pack(side=TOP)
         if c==4:
-            self.next=Button(self.one,text="next",command=self.Window2)
-            self.next.place(x=350,y=400)
+            self.next=Button(self.one,text="NEXT",command=self.Window2,height = 1,width = 7)
+            self.next.place(x=530,y=390)
+            self.next.configure(font=tkFont.Font(family="Segoe Script",slant="italic",weight="bold",size=20),bg="#5e00a3",fg="White",borderwidth = 5)
         
     def Window2(self):
         self.wind2=Tk()
         self.wind2.geometry('700x500')
+        #style11 = ttk.Style()
         self.wind2.configure(background='pink')
         parraFo="Quizás no sea la persona\nperfecta para ti, cometo errores,\ntengo miles de defectos; pero.\nhago lo posible por enamorarte,\npor hacerte feliz, día a día me\nesfuerzo por darte lo mejor de mi\npara que te sientas bien y que\nseas la persona más feliz del\nmundo junto a mi."
         self.historia2=Label(self.wind2, text=parraFo,fg='black', bg = 'pink')
         self.historia2.configure(font=('Comic Sans MS', 16, 'bold'))
+        
+        
         self.historia2.pack(side=TOP)
-        self.next=Button(self.wind2,text="next22",command=self.WindowMain)
-        self.next.place(x=350,y=400)
+        #style11.configure('b11',font=(family="Segoe Script",slant="italic",weight="bold",size=20))
+        self.next=Button(self.wind2,text="NEXT",command=self.WindowMain,height = 1,width = 7,bg="#5e00a3",fg="White",borderwidth = 5,font=("Segoe Script", 20, 'bold','italic'))
+        self.next.place(x=530,y=390)
+        
         self.wind2.mainloop()
 
     def WindowMain(self):
         self.raiz = Tk()
-        self.raiz.geometry('600x400')
+        self.raiz.geometry('850x650')
         self.raiz.configure(background = 'pink')
         self.raiz.config(cursor = "heart")
         style1 = ttk.Style()
@@ -82,7 +93,7 @@ class Aplicacion():
         style2.configure('W2.TButton', font =('calibri', 15, 'bold'),foreground = 'blue')
         self.raiz.resizable(width=False,height=False)
         self.raiz.title("PERSEVERANCE")
-        self.ques=Label(self.raiz, text="¿Quieres ser mi Novia?", font=("Bradley Hand ITC", 30, 'bold'),fg='blue', bg = 'pink')
+        self.ques=Label(self.raiz, text="¿Quieres ser mi Novia?", font=("Bradley Hand ITC", 30, 'bold','italic'),fg='#572364', bg = 'pink')
         self.ques.pack(side=TOP)
         self.xa = IntVar(value=1)
 
