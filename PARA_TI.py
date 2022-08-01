@@ -11,8 +11,10 @@ from tkinter import ttk
 import tkinter.font as tkFont
 import random
 from zlib import Z_FIXED
+from PIL import Image,ImageTk,ImageSequence
 
-from matplotlib import style
+
+
 xa1=0
 ya1=0
 c=0
@@ -22,7 +24,12 @@ class Aplicacion():
     def __init__(self):
         self.one = Tk()
         self.one.geometry('700x500')
-        self.one.configure(background = 'pink')
+        self.one.configure(background ='#DD969C')
+
+        self.Bg1=PhotoImage(file="BackGrounds\Bg1.png")
+        self.BG=Label(self.one,image=self.Bg1)
+        self.BG.place(x=-2,y=-2)
+
         style1 = ttk.Style()
         style1.configure('W.TButton', font =('calibri', 15, 'bold'),foreground = 'red')
         
@@ -42,41 +49,39 @@ class Aplicacion():
         global c
         global parraFo
         c=c+1
-        fontTextHis = tkFont.Font(family="Comic Sans MS", size=14, weight="bold",slant="italic")
+        fontTextHis = tkFont.Font(family="Comic Sans MS", size=12, weight="bold",slant="italic",font=("Segoe Script", 18,'bold'))
         if c==1:
-            parraFo="1a"
-            
+            parraFo="Soy un Fan #1 de tus ojitos\n"
         if c==2:
-            parraFo="2b"
-            
+            parraFo="Pensar en ti antes de dormir se convirtió\nen mi nana que me ayuda a dormir\n"
         if c==3:
-            parraFo="3c"
-            
+            parraFo="Al verte mi corazón se pone muy feliz\n"
         if c==4:
-            parraFo="4d"
-        
+            parraFo="No solo eres todo mi día, eres mi\n24/ 7 días de la semana"
         if(c<=4):
-            self.historia=Label(self.one, text=parraFo,fg='black', bg = 'pink')
+            self.historia=Label(self.one, text=parraFo,fg='black', bg = '#DD969C')
             self.historia.configure(font=fontTextHis)
             self.historia.pack(side=TOP)
         if c==4:
             self.next=Button(self.one,text="NEXT",command=self.Window2,height = 1,width = 7)
             self.next.place(x=530,y=390)
-            self.next.configure(font=tkFont.Font(family="Segoe Script",slant="italic",weight="bold",size=20),bg="#5e00a3",fg="White",borderwidth = 5)
+            self.next.configure(font=tkFont.Font(family="Segoe Script",slant="italic",weight="bold",size=20),bg="#7A00D3",fg="White",borderwidth = 5)
         
     def Window2(self):
         self.wind2=Tk()
         self.wind2.geometry('700x500')
         #style11 = ttk.Style()
-        self.wind2.configure(background='pink')
+        self.wind2.configure(background='#DD969C')
+        self.Bg2=PhotoImage(file="BackGrounds\Bg1.png",master=self.wind2)
+        self.BGg2=Label(self.wind2,image=self.Bg2)
+        self.BGg2.place(x=-2,y=-2)
         parraFo="Quizás no sea la persona\nperfecta para ti, cometo errores,\ntengo miles de defectos; pero.\nhago lo posible por enamorarte,\npor hacerte feliz, día a día me\nesfuerzo por darte lo mejor de mi\npara que te sientas bien y que\nseas la persona más feliz del\nmundo junto a mi."
-        self.historia2=Label(self.wind2, text=parraFo,fg='black', bg = 'pink')
-        self.historia2.configure(font=('Comic Sans MS', 16, 'bold'))
-        
+        self.historia2=Label(self.wind2, text=parraFo,fg='black', bg = '#DD969C')
+        self.historia2.configure(font=("Segoe Script", 19, 'bold'))
         
         self.historia2.pack(side=TOP)
         #style11.configure('b11',font=(family="Segoe Script",slant="italic",weight="bold",size=20))
-        self.next=Button(self.wind2,text="NEXT",command=self.WindowMain,height = 1,width = 7,bg="#5e00a3",fg="White",borderwidth = 5,font=("Segoe Script", 20, 'bold','italic'))
+        self.next=Button(self.wind2,text="NEXT",command=self.WindowMain,height = 1,width = 7,bg="#7A00D3",fg="White",borderwidth = 5,font=("Segoe Script", 20, 'bold','italic'))
         self.next.place(x=530,y=390)
         
         self.wind2.mainloop()
@@ -84,26 +89,35 @@ class Aplicacion():
     def WindowMain(self):
         self.raiz = Tk()
         self.raiz.geometry('850x650')
-        self.raiz.configure(background = 'pink')
+        self.raiz.configure(background = '#DD969C')
+        self.Bg3=PhotoImage(file="BackGrounds\Bg2.png",master=self.raiz)
+        self.Bg3 = self.Bg3.zoom(2)
+        self.BG3=Label(self.raiz,image=self.Bg3)
+        self.BG3.place(x=-210,y=-150)
         self.raiz.config(cursor = "heart")
         style1 = ttk.Style()
         style2 = ttk.Style()
         style3 = ttk.Style()
         style1.configure('W.TButton', font =('calibri', 15, 'bold'),foreground = 'red')
-        style2.configure('W2.TButton', font =('calibri', 15, 'bold'),foreground = 'blue')
+        style2.configure('W2.TButton', font =('calibri', 25, 'bold'),foreground = 'blue')
         self.raiz.resizable(width=False,height=False)
         self.raiz.title("PERSEVERANCE")
-        self.ques=Label(self.raiz, text="¿Quieres ser mi Novia?", font=("Bradley Hand ITC", 30, 'bold','italic'),fg='#572364', bg = 'pink')
+        
+        self.ques=Label(self.raiz, text="¿Quieres ser mi Novia?",fg='#9008F3', bg = '#DD969C')
+        self.ques.configure(font=('Bradley Hand ITC', 50, 'bold','italic'))
+
         self.ques.pack(side=TOP)
         self.xa = IntVar(value=1)
 
-        style3.configure('W3.TButton', font =('Arial', 15, 'bold'),foreground = 'black', background = 'pink')
+        style3.configure('W3.TButton', font =('Arial', 15, 'bold'),foreground = 'black', background = '#DD969C')
         
-        self.tinfo = Text(self.raiz,bg='pink', width=60, height=3)      
+        self.tinfo = Text(self.raiz,bg='#DD969C', width=60, height=3)      
         self.tinfo.pack(side=BOTTOM)      
-        self.binfo = ttk.Button(self.raiz, text='SI', style='W2.TButton', command=self.createNewWindow)                    
+        self.binfo = Button(self.raiz, text='SI', command=self.createNewWindow)
+        self.binfo.configure(font=("Segoe Script", 20, 'bold','italic'),height = 1,width = 5,bg="#7A00D3",fg="White",borderwidth = 3)                    
         self.binfo.pack(side=LEFT)      
-        self.bsalir = ttk.Button(self.raiz, text='NO',style = 'W.TButton', command=self.nada)
+        self.bsalir = Button(self.raiz, text='NO', command=self.nada)
+        self.bsalir.configure(font=("Segoe Script", 20, 'bold','italic'),height = 1,width = 5,bg="#7A00D3",fg="White",borderwidth = 3) 
         self.bsalir.pack(side=RIGHT)
         self.bsalir.bind("<Enter>",self.enter)
         self.raiz.mainloop()
@@ -115,7 +129,15 @@ class Aplicacion():
         
     def createNewWindow(self):
         top = Toplevel() 
-        top.geometry("650x230") 
+        top.geometry("380x500") 
+
+        self.Bg4=PhotoImage(file="BackGrounds\Bg3.png",master=top)
+        #self.Bg3 = self.Bg3.zoom(2)
+        #self.Bg4 = self.Bg4.subsample(1)
+        self.BG4=Label(top,image=self.Bg4)
+
+        self.BG4.place(x=-5,y=-5)
+
         top.title("¡SI!") 
         l2 = Label(top, text = "Sabia que dirias que si mi princesa ( <3 ) TE QUIERO ∞", font =('Brush Script MT', 17, 'bold'))
         l2.pack()
@@ -164,7 +186,7 @@ class Aplicacion():
         
     def verinfo(self):
         self.tinfo.delete("1.0", END)
-        self.tinfo.config(font =('Arial', 11, 'bold'),foreground = 'black', background = 'pink')
+        self.tinfo.config(font =('Arial', 11, 'bold'),foreground = 'black', background = '#DD969C')
         x = self.xa.get()
         if(x==2):
             texto_info = "queee........"
