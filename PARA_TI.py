@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
+#V2
 #Cuando una personsa quiere mucho a otra
 #Su corazón se encarga de hacerle saber que
 #Es ahí
@@ -71,11 +71,12 @@ class Aplicacion():
         self.wind2=Tk()
         self.wind2.geometry('700x500')
         #style11 = ttk.Style()
+        self.wind2.title("Antes que nada, quiero decirte que:") 
         self.wind2.configure(background='#DD969C')
         self.Bg2=PhotoImage(file="BackGrounds\Bg1.png",master=self.wind2)
         self.BGg2=Label(self.wind2,image=self.Bg2)
         self.BGg2.place(x=-2,y=-2)
-        parraFo="Quizás no sea la persona\nperfecta para ti, cometo errores,\ntengo miles de defectos; pero.\nhago lo posible por enamorarte,\npor hacerte feliz, día a día me\nesfuerzo por darte lo mejor de mi\npara que te sientas bien y que\nseas la persona más feliz del\nmundo junto a mi."
+        parraFo="Quizás no sea la persona\nperfecta para ti, cometo errores,\ntengo miles de defectos pero\nhago lo posible por enamorarte,\npor hacerte feliz, día a día me\nesfuerzo por darte lo mejor de mi\npara que te sientas bien y que\nseas la persona más feliz del\nmundo junto a mi."
         self.historia2=Label(self.wind2, text=parraFo,fg='black', bg = '#DD969C')
         self.historia2.configure(font=("Segoe Script", 19, 'bold'))
         
@@ -113,7 +114,7 @@ class Aplicacion():
         
         self.tinfo = Text(self.raiz,bg='#DD969C', width=60, height=3)      
         self.tinfo.pack(side=BOTTOM)      
-        self.binfo = Button(self.raiz, text='SI', command=self.createNewWindow)
+        self.binfo = Button(self.raiz, text='SI', command=self.MedijoQueSI)
         self.binfo.configure(font=("Segoe Script", 20, 'bold','italic'),height = 1,width = 5,bg="#7A00D3",fg="White",borderwidth = 3)                    
         self.binfo.pack(side=LEFT)      
         self.bsalir = Button(self.raiz, text='NO', command=self.nada)
@@ -127,7 +128,7 @@ class Aplicacion():
         self.wind2.destroy()
         self.one.destroy()
         
-    def createNewWindow(self):
+    def MedijoQueSI(self):
         top = Toplevel() 
         top.geometry("380x500") 
 
@@ -138,10 +139,11 @@ class Aplicacion():
 
         self.BG4.place(x=-5,y=-5)
 
-        top.title("¡SI!") 
-        l2 = Label(top, text = "Sabia que dirias que si mi princesa ( <3 ) TE QUIERO ∞", font =('Brush Script MT', 17, 'bold'))
-        l2.pack()
-        bsalir2 = ttk.Button(top, text='SALIR', command=self.salir)
+        top.title("¡SI!")
+        #l2 = Label(top, text = "Sabia que dirias que si mi princesa ( <3 ) TE QUIERO ∞", font =('Brush Script MT', 17, 'bold'))
+        #l2.pack()
+        bsalir2 = Button(top, text='SALIR', command=self.salir)
+        bsalir2.configure(font=("Segoe Script", 20, 'bold','italic'),height = 1,width = 5,bg="#7A00D3",fg="White",borderwidth = 3) 
         bsalir2.pack(side=BOTTOM)
         top.mainloop()
         
@@ -189,11 +191,11 @@ class Aplicacion():
         self.tinfo.config(font =('Arial', 11, 'bold'),foreground = 'black', background = '#DD969C')
         x = self.xa.get()
         if(x==2):
-            texto_info = "queee........"
+            texto_info = "Queee........"
         elif(x==3):
             texto_info = "¡Como que no!"
         elif(x==4):
-            texto_info = "Juuum... ¡MALVADA!"
+            texto_info = "Juuum... ¡Noooo! Dime que si…. (voz dramática)"
         elif(x==5):
             texto_info = "jajajaja no puedes.."
         elif(x==6):
