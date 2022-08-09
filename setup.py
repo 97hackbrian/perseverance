@@ -1,20 +1,7 @@
-from cx_Freeze import setup, Executable
-
-base = None    
-
-executables = [Executable("PARA_TI.py", base=base)]
-
-packages = ["idna"]
-options = {
-    'build_exe': {    
-        'packages':packages,
-    },    
-}
-
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+from distutils.core import setup
+import py2exe
 setup(
-    name = "<any name>",
-    options = options,
-    version = "<any number>",
-    description = '<any description>',
-    executables = executables
+    console=[{"script": "PARA_TI.py"}]
 )
