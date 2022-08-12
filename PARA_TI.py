@@ -105,7 +105,7 @@ class Aplicacion():
         self.raiz.title("PERSEVERANCE")
         
         self.ques=Label(self.raiz, text="¿Quieres ser mi Novia?",fg='#9008F3', bg = '#DD969C')
-        self.ques.configure(font=('Bradley Hand ITC', 50, 'bold','italic'))
+        self.ques.configure(font=('Segoe Script', 45, 'bold','italic'))
 
         self.ques.pack(side=TOP)
         self.xa = IntVar(value=1)
