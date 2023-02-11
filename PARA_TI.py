@@ -1,18 +1,19 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+'''
 #V2
 #Cuando una personsa quiere mucho a otra
 #Su corazón se encarga de hacerle saber que
 #Es ahí
-
-########################## MAIN ###################################
+'''
+########################## MAIN 6Meses###################################
 from tkinter import *
 from tkinter import ttk
 import tkinter.font as tkFont
 import random
 from zlib import Z_FIXED
 from PIL import Image,ImageTk,ImageSequence
-
+import time
 
 
 xa1=0
@@ -20,10 +21,22 @@ ya1=0
 c=0
 xa2=0
 ya2=0
+
+sizeMain='1024x720'
+sizeW1='800x600'
+sizeW2='700x500'
+xlide=0
+def on_enter(e):
+    e.widget.config(text=e.widget.cget('text').upper())
+
+def on_leave(e):
+    e.widget.config(text=e.widget.cget('text').capitalize())
 class Aplicacion():
+    
     def __init__(self):
+        global xlide
         self.one = Tk()
-        self.one.geometry('700x500')
+        self.one.geometry(sizeW2)
         self.one.configure(background ='#DD969C')
 
         self.Bg1=PhotoImage(file="BackGrounds\Bg1.png")
@@ -34,16 +47,203 @@ class Aplicacion():
         style1.configure('W.TButton', font =('calibri', 15, 'bold'),foreground = 'red')
         
         self.one.resizable(width=False,height=False)
-        self.one.title("PRINCESA")
+        self.one.title("MI PRINCESA")
+        
+        self.BgMeses=PhotoImage(file="BackGrounds\Mgs.png")
+        photo = PhotoImage(file = r"BackGrounds\Mgs.png")
+        photoimage = photo.subsample(2, 3)
+        self.fontTextHis = tkFont.Font(family="Comic Sans MS", size=8, weight="bold",slant="italic",font=("Segoe Script", 10,'bold'))
+        self.m1=Label(self.one,text="",fg='black',bg="white",font=self.fontTextHis).place(x=91,y=35)
+        
 
+        self.mg1=Button(self.one,height = 110,width = 190,command=self.Mgs1,image = photoimage,compound = CENTER)
+        self.mg1.configure(font=tkFont.Font(family="Segoe Script",slant="italic",weight="bold",size=1),bg="#DD969C",fg="#DD969C",borderwidth = 5)
+        self.mg1.place(x=90,y=35)
+        
+        self.mg2=Button(self.one,height = 110,width = 190,command=self.Mgs2,image = photoimage,compound = CENTER)
+        self.mg2.configure(font=tkFont.Font(family="Segoe Script",slant="italic",weight="bold",size=1),bg="#DD969C",fg="#DD969C",borderwidth = 5)
+        self.mg2.place(x=410,y=35)
+        
+        self.mg3=Button(self.one,height = 110,width = 190,command=self.Mgs3,image = photoimage,compound = CENTER)
+        self.mg3.configure(font=tkFont.Font(family="Segoe Script",slant="italic",weight="bold",size=1),bg="#DD969C",fg="#DD969C",borderwidth = 5)
+        self.mg3.place(x=10,y=190)
+        
+        self.mg4=Button(self.one,height = 110,width = 190,command=self.Mgs4,image = photoimage,compound = CENTER)
+        self.mg4.configure(font=tkFont.Font(family="Segoe Script",slant="italic",weight="bold",size=1),bg="#DD969C",fg="#DD969C",borderwidth = 5)
+        self.mg4.place(x=250,y=190)
+
+        self.mg5=Button(self.one,height = 110,width = 190,command=self.Mgs5,image = photoimage,compound = CENTER)
+        self.mg5.configure(font=tkFont.Font(family="Segoe Script",slant="italic",weight="bold",size=1),bg="#DD969C",fg="#DD969C",borderwidth = 5)
+        self.mg5.place(x=490,y=190)
+
+        self.mg6=Button(self.one,height = 110,width = 190,command=self.Mgs6,image = photoimage,compound = CENTER)
+        self.mg6.configure(font=tkFont.Font(family="Segoe Script",slant="italic",weight="bold",size=1),bg="#DD969C",fg="#DD969C",borderwidth = 5)
+        self.mg6.place(x=10,y=340)
         
         
+        ##self.mg1.pack(expand=True)
+        ##self.mg1.bind('<Enter>', self.Mgs1)
+        ##self.mg1.bind('<Leave>', lambda e: e.widget.config(bg='white'))
+
+       
+
         self.next=Button(self.one,text="NEXT",command=self.loqueSeaXD,height = 1,width = 7)
         self.next.place(x=530,y=390)
         self.next.configure(font=tkFont.Font(family="Segoe Script",slant="italic",weight="bold",size=20),bg="#5e00a3",fg="White",borderwidth = 5)
 
+
         self.one.mainloop()
         self.wind2.mainloop()
+    
+    def Mgs1(self):
+        fontTextHis = tkFont.Font(family="Comic Sans MS", size=12, weight="bold",slant="italic",font=("Segoe Script", 18,'bold'))
+        global xlide
+        for xd in range(90,200,1):
+            xlide=xd
+            
+            self.mg1.configure(font=tkFont.Font(family="Segoe Script",slant="italic",weight="bold",size=15),bg="#DD969C",fg="#DD969C",borderwidth = 5)
+            self.mg1.place(x=xd,y=35)
+            
+            
+
+            print(xd)
+            self.one.update_idletasks()
+            time.sleep(0.0000001)
+        ##self.wind2.update_idletasks()
+            ##self.one.mainloop()
+        #self.men1=Label(self.one,text="Un nuevo inicio",fg='black',bg="white").place(x=90,y=35)
+        #self.men1.configure(font=fontTextHis)
+        self.fontTextHis = tkFont.Font(family="Comic Sans MS", size=8, weight="bold",slant="italic",font=("Segoe Script", 10,'bold'))
+        self.m1=Label(self.one,text="Un nuevo inicio",fg='black',bg="white",font=self.fontTextHis).place(x=91,y=35)
+        self.one.update_idletasks()
+        time.sleep(3)
+        self.m1=Label(self.one,text="",fg='black',bg="black",font=self.fontTextHis).place(x=91,y=35)
+        self.one.update_idletasks()
+        for xd in range(200,90,-1):
+            xlide=xd
+            self.mg1.configure(font=tkFont.Font(family="Segoe Script",slant="italic",weight="bold",size=15),bg="#DD969C",fg="#DD969C",borderwidth = 5)
+            self.mg1.place(x=xd,y=35)
+            #time.sleep(0.000000001)
+            print(xd)
+            m1=Label(self.one,text="",fg='black',bg="black",font=self.fontTextHis).place(x=91,y=35)
+            self.one.update_idletasks()    
+
+    def Mgs2(self):
+        global xlide
+        for xd in range(410,500,1):
+            xlide=xd
+            self.mg2.place(x=xd,y=35)
+            
+            
+
+            print(xd)
+            self.one.update_idletasks()
+            time.sleep(0.0000001)
+        ##self.wind2.update_idletasks()
+            ##self.one.mainloop()
+        time.sleep(3)
+
+        for xd in range(500,410,-1):
+            xlide=xd
+            self.mg2.configure(font=tkFont.Font(family="Segoe Script",slant="italic",weight="bold",size=15),bg="#DD969C",fg="#DD969C",borderwidth = 5)
+            self.mg2.place(x=xd,y=35)
+            #time.sleep(0.000000001)
+            print(xd)
+            self.one.update_idletasks()    
+        
+
+    def Mgs3(self):
+        global xlide
+        for xd in range(10,100,1):
+            xlide=xd
+            self.mg3.place(x=xd,y=190)
+            
+            
+
+            print(xd)
+            self.one.update_idletasks()
+            time.sleep(0.0000001)
+        ##self.wind2.update_idletasks()
+            ##self.one.mainloop()
+        time.sleep(3)
+
+        for xd in range(100,10,-1):
+            xlide=xd
+            self.mg3.configure(font=tkFont.Font(family="Segoe Script",slant="italic",weight="bold",size=15),bg="#DD969C",fg="#DD969C",borderwidth = 5)
+            self.mg3.place(x=xd,y=190)
+            #time.sleep(0.000000001)
+            print(xd)
+            self.one.update_idletasks()    
+
+    def Mgs4(self):
+        global xlide
+        for xd in range(250,340,1):
+            xlide=xd
+            self.mg4.place(x=xd,y=190)
+            
+            
+
+            print(xd)
+            self.one.update_idletasks()
+            time.sleep(0.0000001)
+        ##self.wind2.update_idletasks()
+            ##self.one.mainloop()
+        time.sleep(3)
+
+        for xd in range(340,250,-1):
+            xlide=xd
+            self.mg4.configure(font=tkFont.Font(family="Segoe Script",slant="italic",weight="bold",size=15),bg="#DD969C",fg="#DD969C",borderwidth = 5)
+            self.mg4.place(x=xd,y=190)
+            #time.sleep(0.000000001)
+            print(xd)
+            self.one.update_idletasks()    
+        
+
+    def Mgs5(self):
+        global xlide
+        for xd in range(490,580,1):
+            xlide=xd
+            self.mg5.place(x=xd,y=190)
+            
+            
+
+            print(xd)
+            self.one.update_idletasks()
+            time.sleep(0.0000001)
+        ##self.wind2.update_idletasks()
+            ##self.one.mainloop()
+        time.sleep(3)
+
+        for xd in range(580,490,-1):
+            xlide=xd
+            self.mg5.configure(font=tkFont.Font(family="Segoe Script",slant="italic",weight="bold",size=15),bg="#DD969C",fg="#DD969C",borderwidth = 5)
+            self.mg5.place(x=xd,y=190)
+            #time.sleep(0.000000001)
+            print(xd)
+            self.one.update_idletasks()    
+
+    def Mgs6(self):
+        global xlide
+        for xd in range(10,100,1):
+            xlide=xd
+            self.mg6.place(x=xd,y=340)
+            
+            
+
+            print(xd)
+            self.one.update_idletasks()
+            time.sleep(0.0000001)
+        ##self.wind2.update_idletasks()
+            ##self.one.mainloop()
+        time.sleep(3)
+
+        for xd in range(100,10,-1):
+            xlide=xd
+            self.mg6.configure(font=tkFont.Font(family="Segoe Script",slant="italic",weight="bold",size=15),bg="#DD969C",fg="#DD969C",borderwidth = 5)
+            self.mg6.place(x=xd,y=340)
+            #time.sleep(0.000000001)
+            print(xd)
+            self.one.update_idletasks()    
         
     def loqueSeaXD(self):
         global c
@@ -69,7 +269,7 @@ class Aplicacion():
         
     def Window2(self):
         self.wind2=Tk()
-        self.wind2.geometry('700x500')
+        self.wind2.geometry(sizeW2)
         #style11 = ttk.Style()
         self.wind2.title("Antes que nada, quiero decirte que:") 
         self.wind2.configure(background='#DD969C')
@@ -89,7 +289,7 @@ class Aplicacion():
 
     def WindowMain(self):
         self.raiz = Tk()
-        self.raiz.geometry('850x650')
+        self.raiz.geometry(sizeMain)
         self.raiz.configure(background = '#DD969C')
         self.Bg3=PhotoImage(file="BackGrounds\Bg2.png",master=self.raiz)
         self.Bg3 = self.Bg3.zoom(2)
@@ -130,7 +330,7 @@ class Aplicacion():
         
     def MedijoQueSI(self):
         top = Toplevel() 
-        top.geometry("380x500") 
+        top.geometry(sizeW1) 
 
         self.Bg4=PhotoImage(file="BackGrounds\Bg3.png",master=top)
         #self.Bg3 = self.Bg3.zoom(2)
