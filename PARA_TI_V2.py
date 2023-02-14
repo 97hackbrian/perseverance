@@ -106,7 +106,7 @@ class Aplicacion():
         mg3x.place(x=10,y=190)
 
         self.fontTextMeses4 = tkFont.Font(family="Comic Sans MS", size=15, weight="normal",slant="roman",font=("Brush Script MT", 22,'bold'),compound=CENTER)
-        mg4x=Label(self.one,text="Cada día\nte amaba más\ny más",fg='white',bg="#DD969C",font=self.fontTextMeses4,compound=CENTER)
+        mg4x=Label(self.one,text="Cada día\nte AMO más\ny más",fg='white',bg="#DD969C",font=self.fontTextMeses4,compound=CENTER)
         mg4x.place(x=250,y=190)
 
         self.fontTextMeses5 = tkFont.Font(family="Comic Sans MS", size=16, weight="normal",slant="roman",font=("Brush Script MT", 17,'bold'),compound=CENTER)
