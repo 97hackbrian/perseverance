@@ -330,7 +330,7 @@ class Aplicacion():
         
     def MedijoQueSI(self):
         top = Toplevel() 
-        top.geometry(sizeW1) 
+        top.geometry(380x500) 
 
         self.Bg4=PhotoImage(file="BackGrounds\Bg3.png",master=top)
         #self.Bg3 = self.Bg3.zoom(2)
